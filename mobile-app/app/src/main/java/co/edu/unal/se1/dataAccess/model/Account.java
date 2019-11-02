@@ -3,16 +3,17 @@ package co.edu.unal.se1.dataAccess.model;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+
 import java.io.Serializable;
 
 @Entity
-public class User implements Serializable {
+public class Account implements Serializable {
 
     @PrimaryKey
     public int id;
 
-    @ColumnInfo(name = "name")
-    public String name;
+    @ColumnInfo(name = "balance")
+    public double balance;
 
     public int getId() {
         return id;
@@ -22,12 +23,11 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public double getBalance() {
+        return balance;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
-
 }

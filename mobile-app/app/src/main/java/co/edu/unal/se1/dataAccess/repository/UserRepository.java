@@ -14,7 +14,8 @@ public class UserRepository {
     private Database database;
     public UserRepository(Context context) {
         database = Room.databaseBuilder(context, Database.class, DB_NAME).
-                allowMainThreadQueries().build();
+                allowMainThreadQueries().fallbackToDestructiveMigration().build();
+        // Destructive Migration
     }
 
     public List<User> getAllUsers() {
