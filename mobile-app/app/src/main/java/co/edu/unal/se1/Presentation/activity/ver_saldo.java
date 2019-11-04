@@ -2,6 +2,7 @@ package co.edu.unal.se1.Presentation.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.audiofx.AcousticEchoCanceler;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,14 +29,12 @@ public class ver_saldo extends AppCompatActivity {
         final TextView cc = findViewById(R.id.cc_text);
         final TextView saldo = findViewById(R.id.saldo_text);
 
+        UserController userController = new UserController();
+        AccountController accountController = new AccountController();
 
-        Account account;
-        nombre.setText(account.getName());
-        cc.setText(account.getId());
-        saldo.setText(String.valueOf(account.getBalance()));
-
-
-
+        nombre.setText( userController.getNameById( new_main.idUser , getApplicationContext() ) );
+        cc.setText( new_main.idUser );
+        saldo.setText(String.valueOf( accountController.getBalanceById( new_main.idUser , getApplicationContext() ) ) );
 
     }
 

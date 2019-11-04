@@ -20,4 +20,16 @@ public class UserController {
         System.out.println("¡Usuario creado satisfactoriamente!");
     }
 
+    public boolean verifyUser( int id , String password , Context context ){
+        userRepository = new UserRepository(context);
+        User user = userRepository.getUserById( id );
+        return user.getPassword() == password;
+    }
+
+    public String getNameById( int id , Context context ){
+        userRepository = new UserRepository(context);
+        User user = userRepository.getUserById( id );
+        return user.getName() + " " + user.getLastName();
+    }
+
 }

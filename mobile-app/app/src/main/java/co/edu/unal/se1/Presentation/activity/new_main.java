@@ -24,13 +24,14 @@ import co.edu.unal.se1.dataAccess.repository.UserRepository;
 
 public class new_main extends AppCompatActivity {
 
+    public static int idUser;
 
     public void abrir_create( View view){
         Intent intent = new Intent(this, crear_usuario.class );
         startActivity(intent);
     }
 
-    public void abrir_practica (View view){
+    public void abrir_saldo (View view){
         Intent intent = new Intent (this, ver_saldo.class);
         startActivity(intent);
 
@@ -41,10 +42,8 @@ public class new_main extends AppCompatActivity {
 
 
     public boolean verificar (int id, String password){
-        boolean verify;
-        User sourceUser = Database.userDao().getUserById(id);
-
-
+        UserController userController = new UserController();
+        return userController.verifyUser( id , password , getApplicationContext() );
     }
 
     @Override
@@ -53,25 +52,19 @@ public class new_main extends AppCompatActivity {
         setContentView(R.layout.new_main);
 
         final EditText idInput = findViewById(R.id.userID);
-        final EditText nameInput = findViewById(R.id.password);
-        final boolean verify=false;
-
-        final  User user;
-        verificar(Integer.parseInt(idInput.getText().toString()) ,nameInput.getText().toString());
+        final EditText passInput = findViewById(R.id.password);
 
         Button login = findViewById(R.id.logIn);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                final boolean verify = verificar( Integer.parseInt( idInput.getText().toString() ) , passInput.getText().toString() ) ;
                 if (verify){
-                    //brir_create(v);
+                    idUser = Integer.parseInt( idInput.getText().toString() );
+                    abrir_saldo(v);
                 }
-
             }
         });
-
-
 
     }
 

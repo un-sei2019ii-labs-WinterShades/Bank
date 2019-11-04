@@ -13,7 +13,7 @@ public class Account implements Serializable {
     public int id;
 
     @ColumnInfo(name = "balance")
-    public double balance;
+    public long balance;
 
     public int getId() {
         return id;
@@ -23,11 +23,11 @@ public class Account implements Serializable {
         this.id = id;
     }
 
-    public double getBalance() {
+    public long getBalance() {
         return balance;
     }
 
-    public void setBalance(double balance) {
+    public void setBalance(long balance) {
         this.balance = balance;
     }
 

@@ -65,4 +65,11 @@ public class AccountController {
         }
 
     }
+
+    public long getBalanceById( int id , Context context ){
+        accountRepository = new AccountRepository(context);
+        Account  account = accountRepository.getAccountById( id );
+        return account.getBalance();
+    }
+
 }
