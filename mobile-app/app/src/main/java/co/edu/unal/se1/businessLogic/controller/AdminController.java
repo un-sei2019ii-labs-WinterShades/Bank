@@ -24,8 +24,21 @@ public class AdminController {
         System.out.println("¡Admin creado satisfactoriamente!");
     }
 
-    public boolean depositMoney(int sourceId, int targetId, double value, Context context) {
+    public boolean adminExists( Context context ){
+        AdminRepository adminRepository = new AdminRepository( context );
+        return !(adminRepository.getAllAdmins().isEmpty());
+    }
 
+    public boolean verifyAdmin( int id , String password , Context context ){
+        adminRepository = new AdminRepository(context);
+        Admin admin = adminRepository.getAdminById( id );
+        System.out.println(" :: " + admin.getId() + " - " + admin.getPassword());
+        return admin.getPassword().equals( password );
+    }
+
+    public boolean depositMoney(int sourceId, int targetId, long value, Context context) {
+
+        AdminRepository adminRepository = new AdminRepository(context);
         UserRepository userRepository = new UserRepository(context);
         AccountRepository accountRepository = new AccountRepository(context);
 
@@ -42,9 +55,9 @@ public class AdminController {
         targetAccount.setBalance(targetAccount.getBalance() + value);
         accountRepository.updateAccount(targetAccount);
 
-        final User updatedSourceUser = userRepository.getUserById(sourceId);
-        System.out.println("Source User (updated) - ID: " + updatedSourceUser.getId() +
-                ", Name: " + updatedSourceUser.getName() );
+        final Admin updatedSourceAdmin = adminRepository.getAdminById(sourceId);
+        System.out.println("Source User (updated) - ID: " + updatedSourceAdmin.getId() +
+                ", Name: " + updatedSourceAdmin.getName() );
 
         final User updatedTargetUser = userRepository.getUserById(targetId);
         final Account updatedTargetAccount = accountRepository.getAccountById(targetId);

@@ -20,7 +20,7 @@ public class AdminRepository {
         // Destructive Migration
     }
 
-    public List<Admin> getAllUsers() { return database.adminDao().getAllAdmins(); }
+    public List<Admin> getAllAdmins() { return database.adminDao().getAllAdmins(); }
 
     public Admin getAdminById(int id) {
         return database.adminDao().getAdminById(id);

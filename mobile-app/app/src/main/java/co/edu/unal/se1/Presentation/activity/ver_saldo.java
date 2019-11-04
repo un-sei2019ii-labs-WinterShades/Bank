@@ -2,7 +2,9 @@ package co.edu.unal.se1.Presentation.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import co.edu.unal.se1.R;
@@ -12,6 +14,12 @@ public class ver_saldo extends AppCompatActivity {
 
     private UserController userController;
     private AccountController accountController;
+
+    public void abrir_transfer( View view){
+        Intent intent = new Intent(this, transfer_money.class );
+        startActivity(intent);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +34,7 @@ public class ver_saldo extends AppCompatActivity {
         AccountController accountController = new AccountController();
 
         nombre.setText( userController.getNameById( MainActivity.idUser , getApplicationContext() ) );
-        cc.setText( MainActivity.idUser );
+        cc.setText( String.valueOf(MainActivity.idUser) );
         saldo.setText(String.valueOf( accountController.getBalanceById( MainActivity.idUser , getApplicationContext() ) ) );
 
     }

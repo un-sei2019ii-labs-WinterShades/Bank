@@ -23,13 +23,14 @@ public class UserController {
     public boolean verifyUser( int id , String password , Context context ){
         userRepository = new UserRepository(context);
         User user = userRepository.getUserById( id );
-        return user.getPassword() == password;
+        System.out.println(" :: " + user.getId() + " - " + user.getPassword());
+        return user.getPassword().equals( password );
     }
 
     public String getNameById( int id , Context context ){
         userRepository = new UserRepository(context);
         User user = userRepository.getUserById( id );
-        return user.getName() + " " + user.getLastName();
+        return user.getName();
     }
 
 }

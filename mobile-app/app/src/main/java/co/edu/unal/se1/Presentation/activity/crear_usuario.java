@@ -29,7 +29,8 @@ public class crear_usuario extends AppCompatActivity {
         final EditText balanceInput = findViewById(R.id.saldo1);
         final EditText password = findViewById(R.id.password1);
 
-        Button createButton = findViewById(R.id.createButton);
+
+        Button createButton = findViewById(R.id.createUser);
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,6 +49,8 @@ public class crear_usuario extends AppCompatActivity {
                 accountController.createAccount(account, getApplicationContext());
             }
         });
+
+
 
 
     }
