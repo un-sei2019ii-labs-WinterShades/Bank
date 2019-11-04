@@ -42,8 +42,8 @@ public class AccountController {
 
             sourceAccount.setBalance(sourceAccount.getBalance() - value);
             targetAccount.setBalance(targetAccount.getBalance() + value);
-            userRepository.updateUser(sourceUser);
-            userRepository.updateUser(targetUser);
+            accountRepository.updateAccount(sourceAccount);
+            accountRepository.updateAccount(targetAccount);
 
             final User updatedSourceUser = userRepository.getUserById(sourceId);
             final Account updatedSourceAccount = accountRepository.getAccountById(sourceId);

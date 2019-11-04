@@ -20,6 +20,4 @@ public class UserController {
         System.out.println("¡Usuario creado satisfactoriamente!");
     }
 
-
-
 }
