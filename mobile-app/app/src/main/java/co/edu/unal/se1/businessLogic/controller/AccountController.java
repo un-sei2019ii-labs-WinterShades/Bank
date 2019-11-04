@@ -21,7 +21,7 @@ public class AccountController {
         System.out.println("¡Cuenta creada satisfactoriamente!");
     }
 
-    public boolean sendMoney(int sourceId, int targetId, double value, Context context) {
+    public boolean sendMoney(int sourceId, int targetId, long value, Context context) {
 
         userRepository = new UserRepository(context);
         accountRepository = new AccountRepository(context);

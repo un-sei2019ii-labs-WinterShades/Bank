@@ -39,10 +39,8 @@ public class crear_usuario extends AppCompatActivity {
                 user.setId(Integer.parseInt(idInput.getText().toString()));
                 account.setId(Integer.parseInt(idInput.getText().toString()));
                 user.setName(nameInput.getText().toString());
-                account.setBalance(Double.parseDouble(balanceInput.getText().toString()));
-                account.setBalance(Double.parseDouble(balanceInput.getText().toString()));
+                account.setBalance(Long.parseLong(balanceInput.getText().toString()));
                 user.setPassword(password.getText().toString());
-                account.setPassword(password.getText().toString());
 
                 userController = new UserController();
                 userController.createUser(user, getApplicationContext());
