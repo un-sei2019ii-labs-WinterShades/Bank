@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/Nombre_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre" />
+
+    <TextView
+        android:id="@+id/cc_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="cc" />
+
+    <TextView
+        android:id="@+id/saldo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Saldo" />
+
+    <TextView
+        android:id="@+id/saldo_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0" />
+</LinearLayout>

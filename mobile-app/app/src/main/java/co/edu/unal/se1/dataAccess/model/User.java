@@ -14,6 +14,9 @@ public class User implements Serializable {
     @ColumnInfo(name = "name")
     public String name;
 
+    @ColumnInfo(password = "password")
+    public String password;
+
     public int getId() {
         return id;
     }
@@ -28,6 +31,10 @@ public class User implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setPassword(String pass) {
+        this.password = pass;
     }
 
 }
