@@ -22,7 +22,7 @@ public class UserRepository {
         return database.userDao().getAllUsers();
     }
 
-    public User getUserById(int id) {
+    public  User getUserById(int id) {
         return database.userDao().getUserById(id);
     }
 

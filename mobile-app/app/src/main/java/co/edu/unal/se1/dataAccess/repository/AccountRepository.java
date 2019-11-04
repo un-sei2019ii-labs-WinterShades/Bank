@@ -20,24 +20,20 @@ public class AccountRepository {
         // Destructive Migration
     }
 
-    public List<Account> getAllAccounts() {
-        return database.AccountDao().getAllAccounts();
-    }
+    public List<Account> getAllAccounts() { return database.accountDao().getAllAccounts(); }
 
     public Account getAccountById(int id) {
-        return database.AccountDao().getAccountById(id);
+        return database.accountDao().getAccountById(id);
     }
 
-    public void createAccount(final Account account) {
-        database.AccountDao().createAccount(account);
-    }
+    public void createAccount(final Account account) { database.accountDao().createAccount(account); }
 
     public void updateAccount(Account account) {
-        database.AccountDao().updateAccount(account);
+        database.accountDao().updateAccount(account);
     }
 
     public void deleteAccount(int id) {
-        Account account = database.AccountDao().getAccountById(id);
-        database.AccountDao().deleteAccount(account);
+        Account account = database.accountDao().getAccountById(id);
+        database.accountDao().deleteAccount(account);
     }
 }
