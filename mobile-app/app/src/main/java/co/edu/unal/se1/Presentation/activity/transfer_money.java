@@ -31,7 +31,7 @@ public class transfer_money extends AppCompatActivity {
         UserController userController = new UserController();
         AccountController accountController = new AccountController();
 
-        Button send = findViewById(R.id.transfer);
+        Button send = findViewById(R.id.send);
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

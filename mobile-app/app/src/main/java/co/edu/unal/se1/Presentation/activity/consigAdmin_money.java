@@ -1,5 +1,6 @@
 package co.edu.unal.se1.Presentation.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +18,11 @@ public class consigAdmin_money extends AppCompatActivity {
     private UserController userController;
     private AccountController accountController;
 
+    public void abrir_eliminar (View view){
+        Intent intent = new Intent (this, delete_acc.class);
+        startActivity(intent);
+
+    }
 
 
     @Override
@@ -31,7 +37,7 @@ public class consigAdmin_money extends AppCompatActivity {
         UserController userController = new UserController();
         AdminController adminController = new AdminController();
 
-        Button send = findViewById(R.id.transfer);
+        Button send = findViewById(R.id.send);
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

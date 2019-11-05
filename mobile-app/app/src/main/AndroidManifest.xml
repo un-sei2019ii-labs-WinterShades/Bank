@@ -22,6 +22,7 @@
         <activity android:name=".Presentation.activity.ver_saldo" />
         <activity android:name=".Presentation.activity.transfer_money" />
         <activity android:name=".Presentation.activity.consigAdmin_money" />
+        <activity android:name=".Presentation.activity.delete_acc" />
 
 
 

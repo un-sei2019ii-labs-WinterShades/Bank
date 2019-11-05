@@ -21,6 +21,12 @@ public class AccountController {
         System.out.println("¡Cuenta creada satisfactoriamente!");
     }
 
+    public boolean deleteAccount( int id , Context context ){
+        accountRepository = new AccountRepository(context);
+        accountRepository.deleteAccount(id);
+        return true;
+    }
+
     public boolean sendMoney(int sourceId, int targetId, long value, Context context) {
 
         userRepository = new UserRepository(context);

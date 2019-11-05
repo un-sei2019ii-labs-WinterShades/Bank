@@ -67,16 +67,26 @@
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/transfer"
+        android:id="@+id/send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginEnd="161dp"
-        android:layout_marginBottom="119dp"
+        android:layout_marginEnd="167dp"
+        android:layout_marginBottom="169dp"
         android:onClick="abrir_transfer"
-        android:text="Send" />
+        android:text="Enviar" />
+
+    <Button
+        android:id="@+id/eliminar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="56dp"
+        android:onClick="abrir_eliminar"
+        android:text="Eliminar Usuario" />
 
 
 </RelativeLayout>
