@@ -21,7 +21,7 @@ public class delete_acc extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eliminar);
+        setContentView(R.layout.activity_delete);
 
         final TextView delAcc = findViewById(R.id.delAccount);
         final Button  delete= findViewById(R.id.delete);

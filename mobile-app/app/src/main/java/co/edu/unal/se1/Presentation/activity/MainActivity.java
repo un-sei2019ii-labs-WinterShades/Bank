@@ -16,18 +16,18 @@ public class MainActivity extends AppCompatActivity {
     public static int idUser;
 
     public void abrir_create( View view){
-        Intent intent = new Intent(this, crear_usuario.class );
+        Intent intent = new Intent(this, create_user.class );
         startActivity(intent);
     }
 
     public void abrir_saldo (View view){
-        Intent intent = new Intent (this, ver_saldo.class);
+        Intent intent = new Intent (this, show_balance.class);
         startActivity(intent);
 
     }
 
     public void abrir_admin (View view){
-        Intent intent = new Intent (this, consigAdmin_money.class);
+        Intent intent = new Intent (this, deposit_money.class);
         startActivity(intent);
 
     }

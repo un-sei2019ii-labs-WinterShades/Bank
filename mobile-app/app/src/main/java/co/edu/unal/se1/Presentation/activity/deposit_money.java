@@ -13,7 +13,7 @@ import co.edu.unal.se1.businessLogic.controller.AccountController;
 import co.edu.unal.se1.businessLogic.controller.AdminController;
 import co.edu.unal.se1.businessLogic.controller.UserController;
 
-public class consigAdmin_money extends AppCompatActivity {
+public class deposit_money extends AppCompatActivity {
 
     private UserController userController;
     private AccountController accountController;
@@ -28,7 +28,7 @@ public class consigAdmin_money extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin);
+        setContentView(R.layout.activity_deposit);
 
         final TextView destAcc = findViewById(R.id.destAccount);
         final TextView  value= findViewById(R.id.amount);
