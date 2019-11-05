@@ -16,7 +16,7 @@ public interface AdminDao {
     @Query("SELECT * FROM admin")
     List<Admin> getAllAdmins();
 
-    @Query("SELECT * FROM user WHERE id = :id")
+    @Query("SELECT * FROM admin WHERE id = :id")
     Admin getAdminById(int id);
 
     @Insert

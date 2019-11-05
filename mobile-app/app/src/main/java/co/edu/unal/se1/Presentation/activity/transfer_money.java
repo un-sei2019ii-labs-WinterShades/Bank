@@ -1,6 +1,5 @@
 package co.edu.unal.se1.Presentation.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,7 +30,7 @@ public class transfer_money extends AppCompatActivity {
         UserController userController = new UserController();
         AccountController accountController = new AccountController();
 
-        Button send = findViewById(R.id.transfer);
+        Button send = findViewById(R.id.send);
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

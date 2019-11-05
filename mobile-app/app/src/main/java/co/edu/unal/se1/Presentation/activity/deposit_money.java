@@ -1,5 +1,6 @@
 package co.edu.unal.se1.Presentation.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,17 +13,22 @@ import co.edu.unal.se1.businessLogic.controller.AccountController;
 import co.edu.unal.se1.businessLogic.controller.AdminController;
 import co.edu.unal.se1.businessLogic.controller.UserController;
 
-public class consigAdmin_money extends AppCompatActivity {
+public class deposit_money extends AppCompatActivity {
 
     private UserController userController;
     private AccountController accountController;
 
+    public void abrir_eliminar (View view){
+        Intent intent = new Intent (this, delete_acc.class);
+        startActivity(intent);
+
+    }
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin);
+        setContentView(R.layout.activity_deposit);
 
         final TextView destAcc = findViewById(R.id.destAccount);
         final TextView  value= findViewById(R.id.amount);
@@ -31,7 +37,7 @@ public class consigAdmin_money extends AppCompatActivity {
         UserController userController = new UserController();
         AdminController adminController = new AdminController();
 
-        Button send = findViewById(R.id.transfer);
+        Button send = findViewById(R.id.send);
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

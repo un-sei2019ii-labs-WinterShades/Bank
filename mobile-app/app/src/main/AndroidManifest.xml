@@ -18,10 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Presentation.activity.crear_usuario" />
-        <activity android:name=".Presentation.activity.ver_saldo" />
+        <activity android:name=".Presentation.activity.create_user" />
+        <activity android:name=".Presentation.activity.show_balance" />
         <activity android:name=".Presentation.activity.transfer_money" />
-        <activity android:name=".Presentation.activity.consigAdmin_money" />
+        <activity android:name=".Presentation.activity.deposit_money" />
+        <activity android:name=".Presentation.activity.delete_acc" />
 
 
 

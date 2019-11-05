@@ -10,7 +10,7 @@ import android.widget.TextView;
 import co.edu.unal.se1.R;
 import co.edu.unal.se1.businessLogic.controller.*;
 
-public class ver_saldo extends AppCompatActivity {
+public class show_balance extends AppCompatActivity {
 
     private UserController userController;
     private AccountController accountController;
@@ -24,7 +24,7 @@ public class ver_saldo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ver_saldo);
+        setContentView(R.layout.activity_show_balance);
 
         final TextView nombre = findViewById(R.id.Nombre_text);
         final TextView cc = findViewById(R.id.cc_text);

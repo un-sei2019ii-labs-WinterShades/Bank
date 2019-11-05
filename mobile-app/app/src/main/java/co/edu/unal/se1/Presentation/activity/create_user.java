@@ -6,15 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-
-import com.google.android.material.textfield.TextInputEditText;
 
 import co.edu.unal.se1.R;
 import co.edu.unal.se1.businessLogic.controller.*;
 import co.edu.unal.se1.dataAccess.model.*;
 
-public class crear_usuario extends AppCompatActivity {
+public class create_user extends AppCompatActivity {
 
     private UserController userController;
     private AccountController accountController;
@@ -22,7 +19,7 @@ public class crear_usuario extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.crear_usuario);
+        setContentView(R.layout.activity_create_user);
 
         final EditText idInput = findViewById(R.id.id);
         final EditText nameInput = findViewById(R.id.name1);

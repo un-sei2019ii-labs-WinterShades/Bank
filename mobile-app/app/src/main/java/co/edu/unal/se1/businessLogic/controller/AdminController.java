@@ -18,15 +18,15 @@ public class AdminController {
     }
 
     public void createAdmin(Admin admin, Context context) {
-
         adminRepository = new AdminRepository(context);
         adminRepository.createAdmin(admin);
         System.out.println("¡Admin creado satisfactoriamente!");
     }
 
-    public boolean adminExists( Context context ){
+    public boolean adminNotExists( int id , Context context ){
         AdminRepository adminRepository = new AdminRepository( context );
-        return !(adminRepository.getAllAdmins().isEmpty());
+        Admin admin = adminRepository.getAdminById( id );
+        return admin == null;
     }
 
     public boolean verifyAdmin( int id , String password , Context context ){

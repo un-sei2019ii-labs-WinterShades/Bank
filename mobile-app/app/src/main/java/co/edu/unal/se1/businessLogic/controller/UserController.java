@@ -27,6 +27,12 @@ public class UserController {
         return user.getPassword().equals( password );
     }
 
+    public boolean deleteUser( int id , Context context ){
+        userRepository = new UserRepository(context);
+        userRepository.deleteUser(id);
+        return true;
+    }
+
     public String getNameById( int id , Context context ){
         userRepository = new UserRepository(context);
         User user = userRepository.getUserById( id );
