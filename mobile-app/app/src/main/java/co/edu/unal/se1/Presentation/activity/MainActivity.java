@@ -48,13 +48,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void createAdmin( int id , String pass ){
+        System.out.println("IN crearAdmin");
         AdminController adminController = new AdminController();
-        if( adminController.adminExists( getApplicationContext() ) ) return;
-        Admin admin = new Admin();
-        admin.setId(id);
-        admin.setName("Admin0");
-        admin.setPassword(pass);
-        adminController.createAdmin( admin , getApplicationContext() );
+        boolean notExists = adminController.adminNotExists( id , getApplicationContext() );
+        System.out.println( "OUTPUT = " + notExists );
+        if( notExists ) {
+            Admin admin = new Admin();
+            admin.setId(id);
+            admin.setName("Admin0");
+            admin.setPassword(pass);
+            System.out.println("DO crearAdmin");
+            adminController.createAdmin(admin, getApplicationContext());
+        }
     }
 
     @Override
@@ -62,14 +67,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        createAdmin( 0 , "qwertyui" );
-
         final EditText idInput = findViewById(R.id.userID);
         final EditText passInput = findViewById(R.id.password);
 
 
 
         Button login = findViewById(R.id.logIn);
+        Button loginAdmin = findViewById(R.id.adminLog);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,7 +83,16 @@ public class MainActivity extends AppCompatActivity {
                     idUser = Integer.parseInt( idInput.getText().toString() );
                     System.out.println("HOLAA");
                     abrir_saldo(v);
-                }else if( verificarAdmin( Integer.parseInt( idInput.getText().toString() ) , passInput.getText().toString() ) ){
+                }
+            }
+        });
+
+        loginAdmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createAdmin( 0 , "qwertyui" );
+                System.out.println( Integer.parseInt( idInput.getText().toString() ) + " : " + passInput.getText().toString() );
+                if( verificarAdmin( Integer.parseInt( idInput.getText().toString() ) , passInput.getText().toString() ) ){
                     idUser = Integer.parseInt( idInput.getText().toString() );
                     abrir_admin(v);
                 }
