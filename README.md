@@ -1,2 +1,2 @@
 # Bank
-Repo for Lab 3 - SE1
+Repo for Labs - SE1
